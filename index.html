@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>azlo.net</title>
+    <!-- <meta name="viewport" content="width=500; user-scalable=1;" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet"> 
+
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./code.js" defer></script> 
+    <title>【ａｚｌｏ．ｎｅｔ】</title>
 </head>
-<body>
-    <div class="window">
-        <div class="content">
-            <div id="rounded-corners">
-            <img src="./lofi1.gif"
-                alt="field of fireflies in the night" 
-                width="450"
-                height=auto>
-            </div>    
-            <!-- <h2>ｙｏｕ　ｍｕｓｔ　ｂｅ　ｌｏｓｔ</h2> -->
+<body onload="startTime()">
+    <div id="content">
+        <div id="border">
+                <div id="window">
+                    <div id="windowbar">
+                        <div id="title"><img src="./pcicon.png" id="icon">𝕪𝕠𝕦 𝕞𝕦𝕤𝕥 𝕓𝕖 𝕝𝕠𝕤𝕥</div>
+                        <div id="buttons">
+
+                            <div class="tb" id="close">
+                                <div class="x"><button id="min">x</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="windowscreen">
+                        <div id="canvas">
+                            <img id="lofi" src="./lofi.png">
+                        </div>
+                    </div>
+
+                </div>
         </div>
+        
     </div>
+    <!-- <div id="footer">
+        <div id="buttons">
+
+            <div class="tab">
+                <button id="start">
+                    <img id="github" src="./painticon.png">
+                    ░a░z░l░o░.░n░e░t░
+                </button>
+            </div>
+
+        </div>
+        <div id="time"><div id="clock">4:02 PM</div></div>
+    </div> -->
+
 </body>
 </html>

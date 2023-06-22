@@ -1,0 +1,344 @@
+* {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    box-sizing:border-box;
+    /* border 1px solid red; */
+}
+
+html {
+    background-color:#40003d;
+}
+
+body {
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    width:auto;
+    height:auto;
+    flex-direction: column;
+}
+
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 0 100%;
+    padding:12px;
+}
+
+#canvas, #time {
+    /* border: 1px solid black; */
+    border-top: 2px solid #a5406f;
+    border-left: 2px solid #a5406f;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: #ca7c9d;
+    padding: 2px;
+    max-width: 100%;
+    max-height: 100%;
+}
+#canvas {
+    min-height:435px;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixel {
+    background-color: white;
+}
+.pixel:hover{
+    filter: brightness(50%);
+    opacity: 80%;
+}
+
+#window {
+    display:flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #a5406f;
+    border-bottom: 2px solid #a5406f;
+    background-color: #ca7c9d;
+    padding:4px;
+    min-height: 100%;
+    justify-content: space-between;
+    
+}
+#border {
+    /* display:none; */
+    background-color: #ca7c9d;
+    border-top: 2px solid #ca7c9d;
+    border-left: 2px solid #ca7c9d;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: 0.2s;
+    /* width: 455px;
+    height: 600px; */
+
+}
+
+#windowbar {
+    display:inherit;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #40003d;
+    color:white;
+    padding:4px;
+
+}
+#title {
+    font-family:sans-serif;
+    /* font-family: 'Silkscreen',sans-serif; */
+    font-size: 24px;
+    font-weight: 700;
+    display:flex;
+    align-items: center;
+    gap: 8px;
+}
+#icon {
+    margin-left: 4px;
+    height:32px;
+    width:32px;
+}
+#buttons {
+    display:flex;
+}
+.tb {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: #ca7c9d;
+    min-width: 32px;
+    min-height: 32px;
+
+    
+}
+.tb:hover {
+    filter: brightness(95%);
+}
+
+#close{
+    margin-left:4px;
+    font-size: 32px;
+}
+
+.x {
+    /* background-color: #ca7c9d; */
+    font-weight: 700;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    min-width: 32px;
+    color:black;
+    border-top: 2px solid #ca7c9d;
+    border-left: 2px solid #ca7c9d;
+    border-right: 2px solid #a5406f;
+    border-bottom: 2px solid #a5406f;
+    min-height:100%;
+    min-width:100%;
+}
+
+#toolbar {
+    display:inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding:4px;
+    padding-top:6px;
+    padding-bottom: 6px;
+}
+
+img{
+    width:32px;
+    height:32px;
+}
+img#lofi{
+    width:512px;
+    height:512px;
+}
+
+button, input {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+    border-color: #ca7c9d;
+    background-color: transparent;
+    border: 0 none transparent;
+    font-size: 16px;
+    font-weight: 700;
+    /* padding-bottom: 3px; */
+    /* background-color: #ca7c9d */
+}
+button:active {
+    /* box-shadow: 0 0px #666; */
+    transform: translateY(3px);
+}
+button:hover {
+    filter: brightness(95%);
+}
+
+input.color {
+    width:36px;
+    height: 36px;
+    border-top: 2px solid #a5406f;
+    border-left: 2px solid #a5406f;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    /* background-color: #ca7c9d; */
+    /* padding: 4px; */
+}
+input:hover {
+    filter: brightness(95%);
+}
+
+.tool {
+    width:auto;
+    height:auto;
+}
+
+#footer {
+    display:flex;
+    flex: 1 0 100%;
+    width:100%;
+    position: relative;
+    bottom: 0;
+    /* height: .5rem; */
+    background-color: #ca7c9d;
+    border-top: 2px solid white;
+    text-align: center;
+
+    overflow: hidden;
+    padding:2px;
+    justify-content: space-between;
+    max-height: 44px;
+    font-size: 18px;
+}
+
+#start {
+
+    padding-left: 16px;
+    padding-right: 16px;
+    gap:8px;
+    background-color: #ca7c9d
+}
+
+#start:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+
+#clock {
+    font-weight:400;
+    padding-left: 8px;
+    padding-right: 8px;
+    display:flex;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+
+}
+
+#github {
+    width:22px;
+    height:22px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    box-shadow: 0 0px #666;
+    cursor: pointer;
+}
+.tab {
+    margin-left: 8px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    /* background-color: #ca7c9d; */
+    filter: brightness(110%);
+}
+
+#resize {
+    display:flex;
+    align-items: center;
+    justify-content: left;
+    flex: 0 0 100%;
+    /* gap:16px; */
+    margin:8px;
+    margin-top:16px;
+    position: relative;
+    bottom: 0;
+    
+}
+
+.grid {
+    white-space: nowrap; 
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#label {
+    margin-right: 16px;
+}
+#num {
+    font-weight: 700;
+    min-width:32px;
+    margin-left:12px;
+    /* margin-left:4px; */
+    /* margin-right:12px; */
+    text-align: center;
+}
+
+.slider {
+    margin: 4px;
+    /* width:auto; */
+    /* background-color: #666; */
+    -webkit-appearance: none;
+    appearance: none;
+    background:#a5406f;
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    height:8px;
+}
+.slider::-webkit-slider-thumb {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: #ca7c9d;
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 24px; /* Set a specific slider handle width */
+    height: 24px; /* Slider handle height */
+    cursor: pointer; /* Cursor on hover */
+  }
