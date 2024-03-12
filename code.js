@@ -16,22 +16,23 @@ function buttonDown(button) {
 }
 
 // window hiding 
-let minimize = document.querySelector('#min');
-let minimize2 = document.querySelector('#ok');
-let windowOpen = true;
+let minimizeButtons = document.querySelectorAll('.min'); 
+let windowOpen = true; // Assuming a single window logic
+
 function windowResize() {
-    if (windowOpen === true) {
-        document.querySelector('#border').style.opacity = "0";
-        document.querySelector('#border').style.transform = "scale(1, 0) ";
-        windowOpen = false;
-    } else {
-        document.getElementById('border').style.opacity = "100";
-        document.querySelector('#border').style.transform = "scale(1, 1)";
-        windowOpen = true;
-    }
+  if (windowOpen) {
+    document.querySelector('#content').style.opacity = "0";
+    document.querySelector('#content').style.transform = "scale(1, 0) ";
+    windowOpen = false;
+  } else {
+    document.getElementById('content').style.opacity = "100";
+    document.querySelector('#content').style.transform = "scale(1, 1)";
+    windowOpen = true;
+  }
 }
-minimize.addEventListener('click', windowResize);
-minimize2.addEventListener('click', windowResize);
+minimizeButtons.forEach(button => {
+    button.addEventListener('click', windowResize); 
+});
 
 // change to random background
 function changeBackground() {

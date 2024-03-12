@@ -12,47 +12,37 @@
 
 
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <script src="./code.js" defer></script> 
     <title>【ａｚｌｏ．ｎｅｔ】</title>
 </head>
 <body onload="startTime()">
+    <video autoplay loop muted width="100%" height="100%" style="position: fixed; top: 0; left: 0; z-index: -1;"> <source src="video.mp4" type="video/mp4">
+    </video>
     <div id="content">
-        <div id="border">
-                <div id="window">
-                    <div id="windowbar">
-                        <div id="title"><img src="./pcicon.png" id="icon">azlo.net</div>
-                        <div id="buttons">
-
-                            <div class="tb" id="close">
-                                <div class="x"><button id="min">X</button></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="windowscreen">
-                        <div id="canvastext">it seems you are lost</div>
-                            <div class="tb" id="ok">
-                                <button id="ok">OK</button>
-                            </div>
-                    </div>
-
-                </div>
-        </div>
-        
-    </div>
-    <!-- <div id="footer">
-        <div id="buttons">
-
-            <div class="tab">
-                <button id="start">
-                    <img id="github" src="./painticon.png">
-                    ░a░z░l░o░.░n░e░t░
-                </button>
+        <div class="window" style="margin: 32px; width: 250px">
+            <div class="title-bar">
+            <div class="title-bar-text">
+                azlo
             </div>
-
+    
+            <div class="title-bar-controls">
+                <!-- <button aria-label="Minimize" class="min"></button> -->
+                <!-- <button aria-label="Maximize" class="min"></button> -->
+                <button aria-label="Close" class="min"></button>
+            </div>
+            </div>
+            <div class="window-body">
+            <p>it seems you are lost</p>
+                <div class="ok-button">
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button class="min">OK</button>
+                        <!-- <button class="min">Yes</button> -->
+                    </section>
+                </div>    
+            </div>
         </div>
-        <div id="time"><div id="clock">4:02 PM</div></div>
-    </div> -->
-
+      </div>
 </body>
 </html>
