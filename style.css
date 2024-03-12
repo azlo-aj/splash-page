@@ -194,6 +194,7 @@ body {
     justify-content: center;     /* Center horizontally */
     align-items: center;  
     padding-bottom: 6px;
+    font-weight:400;
 }
 
 #ok {
