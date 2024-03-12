@@ -17,6 +17,7 @@ function buttonDown(button) {
 
 // window hiding 
 let minimize = document.querySelector('#min');
+let minimize2 = document.querySelector('#ok');
 let windowOpen = true;
 function windowResize() {
     if (windowOpen === true) {
@@ -30,4 +31,6 @@ function windowResize() {
     }
 }
 minimize.addEventListener('click', windowResize);
+minimize2.addEventListener('click', windowResize);
+
 

@@ -10,8 +10,19 @@
 }
 
 html {
-    background-color:#40003d;
+    background-color:#292929;
 }
+
+/* body {
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    width:auto;
+    height:auto;
+    flex-direction: column;
+} */
+
 
 body {
     display:flex;
@@ -21,8 +32,13 @@ body {
     width:auto;
     height:auto;
     flex-direction: column;
+    background-image: url("./background.gif"); /* Path to your GIF */
+    background-size: cover;           /* Make the GIF cover the entire background */
+    background-repeat: no-repeat;     /* Prevent the GIF from repeating */
+    background-position: center;      /* Center the GIF within the background */
+    margin: 0;                        /* Remove browser's default margins */
+    height: 100vh;                    /* Make the body take up the full viewport height */
 }
-
 
 #header {
     display: flex;
@@ -41,18 +57,31 @@ body {
 
 #canvas, #time {
     /* border: 1px solid black; */
-    border-top: 2px solid #a5406f;
-    border-left: 2px solid #a5406f;
+    border-top: 2px solid #717171;
+    border-left: 2px solid #717171;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
-    background-color: #ca7c9d;
+    background-color: #A1A1A1;
     padding: 2px;
     max-width: 100%;
     max-height: 100%;
 }
 #canvas {
-    min-height:435px;
+    min-height:100px;
+    min-width:400px;
+    display: flex;               /* Enable Flexbox */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */           /* Make the div take up full viewport height */
 }
+
+#canvastext {
+    min-height:75px;
+    min-width:300px;
+    display: flex;               /* Enable Flexbox */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */           /* Make the div take up full viewport height */
+}
+
 
 .row {
     display: flex;
@@ -75,9 +104,9 @@ body {
     flex-direction: column;
     border-top: 2px solid white;
     border-left: 2px solid white;
-    border-right: 2px solid #a5406f;
-    border-bottom: 2px solid #a5406f;
-    background-color: #ca7c9d;
+    border-right: 2px solid #717171;
+    border-bottom: 2px solid #717171;
+    background-color: #A1A1A1;
     padding:4px;
     min-height: 100%;
     justify-content: space-between;
@@ -85,9 +114,9 @@ body {
 }
 #border {
     /* display:none; */
-    background-color: #ca7c9d;
-    border-top: 2px solid #ca7c9d;
-    border-left: 2px solid #ca7c9d;
+    background-color: #A1A1A1;
+    border-top: 2px solid #A1A1A1;
+    border-left: 2px solid #A1A1A1;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     transition: 0.2s;
@@ -100,7 +129,7 @@ body {
     display:inherit;
     justify-content: space-between;
     align-items: center;
-    background-color: #40003d;
+    background: linear-gradient(to right, #525252, #A1A1A1);
     color:white;
     padding:4px;
 
@@ -108,7 +137,7 @@ body {
 #title {
     font-family:sans-serif;
     /* font-family: 'Silkscreen',sans-serif; */
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     display:flex;
     align-items: center;
@@ -127,9 +156,10 @@ body {
     border-left: 2px solid white;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
-    background-color: #ca7c9d;
+    background-color: #A1A1A1;
     min-width: 32px;
     min-height: 32px;
+    
 
     
 }
@@ -151,12 +181,26 @@ body {
     min-height: 32px;
     min-width: 32px;
     color:black;
-    border-top: 2px solid #ca7c9d;
-    border-left: 2px solid #ca7c9d;
-    border-right: 2px solid #a5406f;
-    border-bottom: 2px solid #a5406f;
+    border-top: 2px solid #A1A1A1;
+    border-left: 2px solid #A1A1A1;
+    border-right: 2px solid #717171;
+    border-bottom: 2px solid #717171;
     min-height:100%;
     min-width:100%;
+}
+#windowscreen {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;     /* Center horizontally */
+    align-items: center;  
+    padding-bottom: 6px;
+}
+
+#ok {
+    min-width: 75px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #toolbar {
@@ -183,7 +227,7 @@ button, input {
     justify-content: center;
     height:100%;
     width:100%;
-    border-color: #ca7c9d;
+    border-color: #A1A1A1;
     background-color: transparent;
     border: 0 none transparent;
     font-size: 16px;
@@ -202,8 +246,8 @@ button:hover {
 input.color {
     width:36px;
     height: 36px;
-    border-top: 2px solid #a5406f;
-    border-left: 2px solid #a5406f;
+    border-top: 2px solid #717171;
+    border-left: 2px solid #717171;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     /* background-color: #ca7c9d; */
@@ -225,7 +269,7 @@ input:hover {
     position: relative;
     bottom: 0;
     /* height: .5rem; */
-    background-color: #ca7c9d;
+    background-color: #A1A1A1;
     border-top: 2px solid white;
     text-align: center;
 
@@ -241,7 +285,7 @@ input:hover {
     padding-left: 16px;
     padding-right: 16px;
     gap:8px;
-    background-color: #ca7c9d
+    background-color: #A1A1A1
 }
 
 #start:hover {
@@ -320,7 +364,7 @@ a:hover{
     /* background-color: #666; */
     -webkit-appearance: none;
     appearance: none;
-    background:#a5406f;
+    background:#717171;
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
@@ -335,7 +379,7 @@ a:hover{
     border-left: 2px solid white;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
-    background-color: #ca7c9d;
+    background-color: #A1A1A1;
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 24px; /* Set a specific slider handle width */
