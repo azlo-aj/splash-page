@@ -33,4 +33,21 @@ function windowResize() {
 minimize.addEventListener('click', windowResize);
 minimize2.addEventListener('click', windowResize);
 
+// change to random background
+function changeBackground() {
+    const backgrounds = [ 
+      "backgrounds/1.gif",
+      "backgrounds/2.gif"
+    //   "backgrounds/3.gif",
+    //   "backgrounds/4.gif",
+    ];
 
+    // Get a random index within the array's range
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    const selectedBackground = backgrounds[randomIndex];
+
+    // Update the body's background image
+    document.body.style.backgroundImage = `url(${selectedBackground})`;
+}
+// Call the function when the page loads
+window.onload = changeBackground; 
